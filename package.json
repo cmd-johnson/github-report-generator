@@ -1,0 +1,24 @@
+{
+  "name": "github-report-generator",
+  "version": "0.0.0",
+  "description": "Generate reports from your git issues",
+  "main": "app.js",
+  "author": "Jonas Auer",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/cmd-johnson/github-report-generator.git"
+  },
+  "devDependencies": {
+    "eslint": "^1.9.0"
+  },
+  "dependencies": {
+    "body-parser": "^1.14.1",
+    "express": "^4.13.3",
+    "express-session": "^1.12.1",
+    "passport": "^0.3.2",
+    "passport-github2": "^0.1.9",
+    "request-promise": "^1.0.2",
+    "winston": "^2.1.0"
+  }
+}
