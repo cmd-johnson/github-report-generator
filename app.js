@@ -23,6 +23,9 @@ app.use(session({
   resave: false
 }));
 
+// enable github authentification (has to be done after the session is initialized)
+require('./util/auth')(app);
+
 // register routes
 app.use('/', require('./routes/'));
 
