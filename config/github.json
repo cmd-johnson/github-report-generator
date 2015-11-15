@@ -1,0 +1,6 @@
+{
+  "clientID": "your client's ID",
+  "clientSecret": "your client's sectret",
+  "callbackUrl": "http://localhost:3000/login/callback",
+  "userAgent": "the user-agent to use for requests to the github API"
+}
