@@ -25,7 +25,7 @@ function init(app) {
   function(accessToken, refreshToken, profile, done) {
     var user = {
       username: profile.username,
-      displayName: profile._json.displayName,
+      displayName: profile.displayName,
       reposUrl: profile._json.repos_url,
       accessToken: accessToken
     };
