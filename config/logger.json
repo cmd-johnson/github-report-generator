@@ -1,0 +1,18 @@
+{
+  "levels": [
+    { "name": "fatal", "color": "red" },
+    { "name": "crit", "color": "red" },
+    { "name": "warn", "color": "yellow" },
+    { "name": "info", "color": "blue" },
+    { "name": "debug", "color": "green" },
+    { "name": "trace", "color": "grey" }
+  ],
+  "transports": [
+    {
+      "type": "Console",
+      "level": "trace",
+      "colorize": "all",
+      "timestamp": true
+    }
+  ]
+}
