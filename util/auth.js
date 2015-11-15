@@ -23,7 +23,13 @@ function init(app) {
     callbackURL: config.callbackUrl
   },
   function(accessToken, refreshToken, profile, done) {
-    return done(null, profile);
+    var user = {
+      username: profile.username,
+      displayName: profile._json.displayName,
+      reposUrl: profile._json.repos_url,
+      accessToken: accessToken
+    };
+    return done(null, user);
   }));
 
   app.use(passport.initialize());
