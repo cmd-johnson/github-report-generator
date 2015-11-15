@@ -32,7 +32,7 @@ app.listen(port, function() {
   logger.info('now listening on port ' + port);
 });
 
-// catch uncaught exceptions
+// log uncaught exceptions
 process.on('uncaughtException', function(err) {
   logger.fatal(err);
 });
