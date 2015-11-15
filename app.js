@@ -18,7 +18,7 @@ app.use(bodyParser.json());
 
 // enable session cookies
 app.use(session({
-  secret: config.session.secret,
+  secret: config.server.session.secret,
   saveUninitialized: false,
   resave: false
 }));
