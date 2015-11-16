@@ -6,3 +6,4 @@ var router = new Router();
 module.exports = router;
 
 router.use('/login', require('./login'));
+router.use('/api', require('./api'));
