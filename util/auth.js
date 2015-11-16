@@ -29,6 +29,7 @@ function init(app) {
       reposUrl: profile._json.repos_url,
       accessToken: accessToken
     };
+    logger.trace('user "' + user.username + '" logged in with accessToken "' + user.accessToken + '"');
     return done(null, user);
   }));
 
