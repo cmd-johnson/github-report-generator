@@ -115,6 +115,8 @@ function loadRepositoryIssues(user, repository, from, issuesLoadedCb) {
 
         var relevantParts = {
           title: issue.title,
+          id: issue.id,
+          number: issue.number,
           description: issue.body,
           labels: issue.labels,
           state: issue.state,
