@@ -127,14 +127,16 @@ function loadRepositoryIssues(user, repository, from, issuesLoadedCb) {
           createdAt: issue.created_at,
           lastUpdate: issue.updated_at,
           closedAt: issue.closed_at,
-          involvedUsers: []
+          involvedUsers: involvedUsers
         };
 
         // remove the assignee from the involved users list
-        for (var i = 0; i < involvedUsers.length; i++) {
-          if (involvedUsers[i].id === relevantParts.assignee.id) {
-            relevantParts.involvedUsers = involvedUsers.splice(i, 1);
-            break;
+        if (relevantParts.assignee) {
+          for (var i = 0; i < relevantParts.involvedUsers.length; i++) {
+            if (relevantParts.involvedUsers[i].id === relevantParts.assignee.id) {
+              relevantParts.involvedUsers = relevantParts.involvedUsers.splice(i, 1);
+              break;
+            }
           }
         }
 
