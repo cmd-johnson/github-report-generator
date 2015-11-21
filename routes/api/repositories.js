@@ -123,7 +123,7 @@ function loadRepositoryIssues(user, repository, from, issuesLoadedCb) {
           assignee: (issue.assignee && {
             id: issue.assignee.id,
             login: issue.assignee.login
-          }) || 'unassigned',
+          }) || null,
           createdAt: issue.created_at,
           lastUpdate: issue.updated_at,
           closedAt: issue.closed_at,
