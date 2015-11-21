@@ -7,9 +7,11 @@ module.exports = router;
 
 router.get('', function(req, res) {
   var user = {
-    loggedIn: req.isAuthenticated(),
-    username: req.user.username || '',
-    displayName: req.user.displayName || ''
+    loggedIn: req.isAuthenticated()
   };
+  if (req.user) {
+    user.username = req.user.username || '';
+    user.displayName = req.user.displayName || '';
+  }
   res.json(user);
 });
