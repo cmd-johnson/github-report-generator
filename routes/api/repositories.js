@@ -143,10 +143,13 @@ function loadRepositoryIssues(user, repository, from, issuesLoadedCb) {
         var milestone = (issue.milestone && issue.milestone.title) || 'unassigned';
 
         if (!(milestone in relevant)) {
-          relevant[milestone] = [];
+          relevant[milestone] = {
+            description: (issue.milestone && issue.milestone.description) || '',
+            issues: []
+          };
         }
 
-        relevant[milestone].push(relevantParts);
+        relevant[milestone].issues.push(relevantParts);
 
         logger.trace('exiting async.each for ' + issue.title);
         return doneCb();
