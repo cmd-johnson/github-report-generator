@@ -37,5 +37,5 @@ app.listen(port, function() {
 
 // log uncaught exceptions
 process.on('uncaughtException', function(err) {
-  logger.fatal(err);
+  logger.fatal('uncaught exception', err);
 });
