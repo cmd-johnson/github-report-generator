@@ -1,0 +1,26 @@
+<div ng-controller="repositoryReport">
+  <h2>Repository report</h2>
+  <div ng-show="user.loggedIn">
+    <div ng-hide="loading">
+      <a href="" ng-click="generateReport()">Generate report</a>
+    </div>
+    <div ng-show="loading">
+      <i>generating report...</i>
+    </div>
+    <div ng-show="loadingError">
+      <p>an error occurred generating your report, retry it in a few seconds</p>
+    </div>
+    <div ng-repeat="entry in report track by entry.milestone">
+      <h3>Milestone: {{ entry.milestone }}</h3>
+      <p>{{ entry.description }}</p>
+      <div ng-repeat="issue in entry.issues | orderBy:'number' track by issue.id">
+        <h4>#{{ issue.number }}: {{ issue.title }}</h4>
+        <b ng-show="issue.assignee">Responsible: {{ issue.assignee.login }}</b>
+        <i ng-show="issue.involvedUsers.length > 0">Co-responsible: <span ng-repeat="user in issue.involvedUsers track by user.id">{{ user.name }}{{$last ? '' : ', '}}</span></i>
+        <span ng-repeat="label in issue.labels"><span style="background-color: #{{ label.color }}; color: #fff">{{ label.name }}</span>{{$last ? '' : ', '}}</span>
+        <p>{{ issue.description }}</p>
+        <b>status: {{ issue.state }}</b>
+      </div>
+    </div>
+  </div>
+</div>

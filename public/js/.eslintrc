@@ -1,0 +1,13 @@
+{
+  "env": {
+    "node": false,
+    "browser": true
+  },
+  "globals": {
+    "angular": true
+  },
+  "rules": {
+    "strict": 0,
+    "max-nested-callbacks": [2, 4],
+  }
+}

@@ -1,0 +1,15 @@
+<div ng-controller="repositorySelection">
+  <h2>Repository selection</h2>
+  <div ng-show="user.loggedIn">
+    <div ng-show="loading">
+      <i>loading your repositories...</i>
+    </div>
+    <div ng-show="loadingError">
+      <a ng-click="reloadRepositories()">an error occurred loading your repositories, click here to retry</a>
+    </div>
+    <div ng-repeat="repository in repositories track by repository.id">
+      <a ui-sref="repositoryReport({ repoId: repository.id })"><h3>{{ repository.fullName }}</h3></a>
+      <p>{{ repository.description }}</p>
+    </div>
+  </div>
+</div>

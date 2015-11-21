@@ -1,0 +1,15 @@
+<!doctype html>
+<html ng-app="application">
+  <head>
+    <title>GitHub report generator</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.js"></script>
+    <script src="js/app.js"></script>
+    <base href="/">
+  </head>
+  <body>
+    <h1>GitHub Report Generator</h1>
+    <span ng-show="user">Welcome, {{ user.username }}</span>
+    <ui-view></ui-view>
+  </body>
+</html>
